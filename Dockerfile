@@ -1,7 +1,8 @@
-FROM node:14-alpine
-WORKDIR /app
+FROM node:20-alpine
+WORKDIR /usr/local/app
 COPY . .
-RUN npm install
+RUN yarn install --production
+RUN yarn add typescript
 RUN npm run build
 EXPOSE 3000
-CMD ["npm","run", "dev"]
+CMD ["node", "./dist/index.js"]

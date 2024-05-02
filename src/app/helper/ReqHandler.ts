@@ -38,6 +38,7 @@ export default {
       const error = new ResponseBody(401, e.message,  e);
       response.send(error);
     }
+    next();
   },
   async validateAdminToken(request: any, response: any, next: any) {
     try {
@@ -49,5 +50,7 @@ export default {
       const error = new ResponseBody(401, e.message,  e);
       response.send(error);
     }
+    next();
+
   },
 };

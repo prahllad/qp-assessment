@@ -14,10 +14,13 @@ const users = [
 ];
 
 import userSchema from '../app/schema/userSchema';
-import mongoose from 'mongoose';
 
 const seedUser = async ()=>{
     try{
+    let user:any =await userSchema.find({email:{$in:users.map((el:any)=> el.email)}})
+    if(user.length>1){
+        return;
+    }
     await userSchema.insertMany(users);
 
     } catch(err){
