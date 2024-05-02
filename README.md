@@ -5,7 +5,7 @@
  # PORT = 4000
 # MONGO_URI = ''
 # To build Docker :-
- in root ->  docker build -t grossery-booking-app .
+ in root ->  docker build -t grossery-booking-app 
  in root -> docker run --env-file .env -p 3000:3000 grossery-booking-app
 
  we can access [api in ](http://localhost:3000/admin)  to test if server is up inside docker.
